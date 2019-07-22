@@ -3,14 +3,24 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { AngularFireModule } from '@angular/fire';
+import { environment } from 'src/environments/environment';
+import { AngularFireStorageModule } from '@angular/fire/storage';
+import { FirebaseUploadComponent } from './firebase-upload/firebase-upload.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    FirebaseUploadComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AngularFireModule.initializeApp(environment.firebase),
+   
+    AngularFireStorageModule,
+  
+ 
   ],
   providers: [],
   bootstrap: [AppComponent]
